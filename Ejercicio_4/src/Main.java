@@ -28,4 +28,10 @@ public class Main extends PApplet{
 	public void mouseClicked() {
 		log.onClick();
 	}
+	
+	@Override
+	public void mouseReleased() {
+		// TODO Auto-generated method stub
+		log.release();
+	}
 }

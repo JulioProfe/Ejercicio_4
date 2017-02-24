@@ -70,9 +70,14 @@ public class Comunicacion extends Observable implements Runnable{
 
 				if (messageContent.contains("I am:")) { 
 					String[] partes = messageContent.split(":");
-					int externalID = Integer.parseInt(partes[1]);
-					if (externalID >= identifier) {
-						identifier = externalID + 1;
+					int ID = Integer.parseInt(partes[1]);
+					if (ID >= identifier) {
+						identifier = ID + 1;
+					}
+					if (identifier >= 2) {
+						InetAddress host = InetAddress.getByName(GROUP_ADDRESS);
+						socket.leaveGroup(host);
+						socket.close();
 					}
 				}
 			}
