@@ -54,12 +54,13 @@ public class Logica implements Observer {
 		// TODO Auto-generated method stub
 		System.out.println("RECIBIDITO UN OBJETITO");
 		if (arg instanceof Objeto) {
-			ob.add((Objeto) arg);
-			System.out.println("Es un objeto");
-			jugar = true;
+			if (jugar == true) {
+				ob.add((Objeto) arg);
+				System.out.println("Es un objeto");
+			}
 		}
 	}
-	
+
 	public void onClick() {
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
